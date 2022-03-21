@@ -27,6 +27,7 @@ class NoopCalculator extends AbstractCalculator
     protected function doAccumulate(SocialPostTo $postTo): void
     {
         $this->postCount++;
+        
         if(!in_array($postTo->getAuthorId(), $this->usersIds, true)){
             array_push($this->usersIds, $postTo->getAuthorId());
         }
